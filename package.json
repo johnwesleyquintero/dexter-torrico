@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-main",
+  "version": "1.0.0",
+  "description": "Resume portfolio",
+  "scripts": {
+    "check": "npm run lint && npm run format && npm run style",
+    "lint": "eslint . --ext .html,.js",
+    "format": "prettier --write .",
+    "style": "stylelint **/*.css",
+    "dev": "live-server src",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && mkdir dist && cp -r src/* dist/"
+  },
+  "devDependencies": {
+    "@html-eslint/parser": "^0.41.0",
+    "eslint": "^8.0.0",
+    "live-server": "^1.2.2",
+    "prettier": "^3.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}

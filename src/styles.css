@@ -1,0 +1,440 @@
+/* style.css */
+:root {
+  --header-footer-gradient-start: #4a00e0; /* Darker blue-purple */
+  --header-footer-gradient-end: #8e2de2; /* Lighter purple */
+  --primary-blue: #2196f3; /* Bright blue for titles and accents */
+  --text-color-dark: #444444; /* Dark gray for main content text */
+  --text-color-medium: #666666; /* Medium gray for secondary text */
+  --text-color-light: #ffffff; /* White for text on dark backgrounds */
+  --background-body: #f7fafc; /* Very Light Gray */
+  --background-container: #ffffff; /* White for main content area */
+  --border-color-soft: #eeeeee; /* Light gray for borders/separators */
+  --progress-bar-bg: #eeeeee; /* Light gray for progress bar track */
+  --font-family-base:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --border-radius-profile: 50%;
+  --border-radius-container: 10px;
+  --shadow-container: 0 6px 18px rgba(0, 0, 0, 0.07);
+  --footer-height: 60px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background-body);
+  font-family: var(--font-family-base);
+  color: var(--text-color-dark);
+  line-height: 1.7;
+  padding-bottom: 80px; /* Increased padding to account for footer height and margin */
+}
+
+p,
+li {
+  margin-bottom: 8px;
+}
+
+.header-section {
+  background: linear-gradient(
+    to right,
+    var(--header-footer-gradient-start),
+    var(--header-footer-gradient-end)
+  );
+  color: var(--text-color-light);
+  padding: 40px 32px; /* Match main padding */
+  width: 90%; /* Match main width */
+  max-width: 900px; /* Match main max-width */
+  margin: 40px auto 0 auto; /* Center and add top margin */
+  border-radius: var(--border-radius-container); /* Apply border-radius */
+  box-shadow: var(--shadow-container); /* Apply shadow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%; /* No need for max-width here, parent handles it */
+  padding: 0; /* Remove padding, parent handles it */
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: var(--border-radius-profile);
+  object-fit: cover;
+  margin-right: 40px;
+  border: 5px solid var(--header-footer-gradient-end); /* Border matching the lighter gradient color */
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.2); /* Subtle white glow */
+}
+
+.header-info {
+  text-align: left;
+}
+
+.header-info h1 {
+  margin-bottom: 5px;
+  font-size: 2.8em;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.header-title {
+  font-size: 1.3em;
+  color: var(--text-color-light);
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+  font-size: 1em;
+}
+
+.contact-grid p {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  color: var(--text-color-light);
+  opacity: 0.9;
+}
+
+.contact-grid p i {
+  margin-right: 8px;
+  color: var(--text-color-light);
+  opacity: 0.7;
+}
+
+.contact-grid p a {
+  color: var(--text-color-light);
+  text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.contact-grid p a:hover {
+  opacity: 0.7;
+}
+
+main {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  background: var(--background-container);
+  border-radius: var(--border-radius-container);
+  box-shadow: var(--shadow-container);
+  padding: 40px 32px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+h2.section-title {
+  color: var(--primary-blue);
+  border-bottom: 1px solid var(--border-color-soft);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+h3 {
+  margin-bottom: 8px;
+  font-size: 1.15em;
+  color: var(--text-color-dark);
+  font-weight: 600;
+}
+
+.job-experience {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.job {
+  margin-bottom: 0; /* Reset margin-bottom as gap handles spacing */
+  padding-left: 20px; /* Space for the vertical line */
+  border-left: 3px solid var(--primary-blue); /* Vertical line */
+}
+
+.job p {
+  color: var(--text-color-medium);
+  font-size: 0.95em;
+  margin-bottom: 5px;
+}
+
+.job ul {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-left: 20px;
+  list-style-type: disc; /* Ensure disc style */
+  color: var(--text-color-dark);
+}
+
+.job ul li {
+  margin-bottom: 5px;
+  font-size: 0.95em;
+}
+
+/* Project Links Section */
+.project-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.project-links-grid p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  color: var(--text-color-dark);
+  font-size: 1em;
+}
+
+.project-links-grid p i {
+  margin-right: 10px;
+  color: var(--primary-blue);
+}
+
+/* Technical Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.skill-category {
+  margin-bottom: 0;
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill-header h3 {
+  margin-bottom: 0;
+  flex-grow: 1;
+  font-size: 1.2em;
+  color: var(--text-color-dark);
+}
+
+.progress-bar-container {
+  width: 150px; /* Fixed width for the progress bar */
+  background-color: var(--progress-bar-bg);
+  border-radius: 12px;
+  height: 12px;
+  overflow: hidden;
+  margin-left: 15px;
+}
+
+.progress-bar {
+  background-color: var(--primary-blue);
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+.skill-header span {
+  margin-left: 10px;
+  font-weight: 600;
+  color: var(--text-color-dark);
+}
+
+.skill-category h4 {
+  color: var(--text-color-medium);
+  font-size: 1em;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.skill-category ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.skill-category ul li {
+  margin-bottom: 5px;
+  font-size: 0.95em;
+  color: var(--text-color-dark);
+}
+
+/* Education & Certifications Section */
+.education-certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.education h3,
+.certifications h3 {
+  color: var(--text-color-dark);
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.education p {
+  margin-bottom: 5px;
+  color: var(--text-color-dark);
+  font-size: 0.95em;
+}
+
+.education p strong {
+  font-weight: 600;
+}
+
+.certifications ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.certifications ul li {
+  margin-bottom: 5px;
+  font-size: 0.95em;
+  color: var(--text-color-dark);
+}
+
+footer {
+  background: linear-gradient(
+    to right,
+    var(--header-footer-gradient-start),
+    var(--header-footer-gradient-end)
+  );
+  color: var(--text-color-light);
+  padding: 40px 32px; /* Match main padding */
+  width: 90%; /* Match main width */
+  max-width: 900px; /* Match main max-width */
+  margin: 40px auto; /* Center the footer and add top margin */
+  border-radius: var(--border-radius-container); /* Apply border-radius */
+  box-shadow: var(--shadow-container); /* Apply shadow */
+  text-align: center;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative; /* Remove fixed positioning */
+  bottom: auto;
+  left: auto;
+  border-top: none; /* Remove border-top as it's now a separate block */
+  z-index: auto;
+}
+
+.footer-links {
+  margin-right: 20px;
+}
+
+.footer-links a {
+  color: var(--text-color-light);
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+.theme-toggle {
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: var(--text-color-light);
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.theme-toggle:hover {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-pic {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .header-info {
+    text-align: center;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .contact-grid p {
+    justify-content: center;
+  }
+
+  .skills-grid,
+  .education-certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .theme-toggle {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-info h1 {
+    font-size: 2.2em;
+  }
+
+  .header-title {
+    font-size: 1.1em;
+  }
+
+  main {
+    padding: 20px 15px;
+  }
+
+  h2.section-title {
+    font-size: 1.3em;
+  }
+
+  .job {
+    padding-left: 15px;
+  }
+}
